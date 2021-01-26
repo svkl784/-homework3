@@ -1,7 +1,5 @@
 import java.util.Arrays;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Task1Version2 {
     private static final int MAX_BOUND = 1000;
@@ -16,7 +14,7 @@ public class Task1Version2 {
             array[i] = rand;
         }
         System.out.print("String: ");
-        String str = Arrays.toString(array);
+        String str = Arrays.toString(array).replaceAll("\\[|\\]|,|\\s", " ");
         System.out.println(str.substring(1, str.length() - 1));
     }
 }
