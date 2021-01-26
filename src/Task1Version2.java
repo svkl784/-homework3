@@ -15,6 +15,6 @@ public class Task1Version2 {
         }
         System.out.print("String: ");
         String str = Arrays.toString(array).replaceAll("\\[|\\]|,|\\s", " ");
-        System.out.println(str.substring(1, str.length() - 1));
+        System.out.println(str);
     }
 }
