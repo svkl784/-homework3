@@ -1,7 +1,5 @@
 import java.util.Arrays;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Task1Version2 {
     private static final int MAX_BOUND = 1000;
