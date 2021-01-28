@@ -9,10 +9,9 @@ public class Task1 {
         StringBuilder string = new StringBuilder("String: ");
         for (int i = 0; i < 100; i++) {
             int stringInt = RANDOM.nextInt((MAX_BOUND - MIN_BOUND) + 1) + MIN_BOUND;
-            string.append(stringInt).append(" ");
+          string.append(stringInt).append(" ");
         }
-//        String newString = string.toString();
-//        System.out.println(newString);
-        System.out.println(string);
+        String newString = string.toString();
+        System.out.println(newString);
     }
 }

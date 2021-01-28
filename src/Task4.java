@@ -1,22 +1,41 @@
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Task4 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your name");
-        String name = sc.nextLine();
-        System.out.println("Enter your age");
-        int age = sc.nextInt();
-        String hello = "Hello dear %s, you are %d years old!";
-        hello = String.format(hello, name, age);
-        System.out.println(hello);
-        System.out.println();
-        String[] words = hello.split("\\s");
-        int str = 1;
-        int n = 0;
-        for (int i = 0; i < words.length; i++, str++, n++) {
-            System.out.println(words[n] + " (" + str + " string, number of characters = " + words[i].length() + ")");
+        System.out.print("Our text: ");
+        String text = "\"Red lorry, yellow lorry, red lorry, yellow lorry\"";
+        System.out.println(text);
+        System.out.println("Our split text: ");
+        String[] array = text.split(" ");
+        for (String s : array) {
+            System.out.println(s);
         }
+        String newText = Arrays.toString(array);
 
+        Pattern pattern1 = Pattern.compile("lorry");
+        Pattern pattern2 = Pattern.compile("red", Pattern.CASE_INSENSITIVE);
+        Pattern pattern3 = Pattern.compile("yellow");
+        Matcher matcher1 = pattern1.matcher(newText);
+        Matcher matcher2 = pattern2.matcher(newText);
+        Matcher matcher3 = pattern3.matcher(newText);
+        int count1 = 0;
+        int count2 = 0;
+        int count3 = 0;
+        while (matcher1.find()) {
+            count1++;
+        }
+        System.out.println("Word \"lorry\" is found " + count1 + " times");
+
+        while (matcher2.find()) {
+            count2++;
+        }
+        System.out.println("Word \"red\" is found " + count2 + " times");
+
+        while (matcher3.find()) {
+            count3++;
+        }
+        System.out.println("Word \"yellow\" is found " + count3 + " times");
     }
 }
